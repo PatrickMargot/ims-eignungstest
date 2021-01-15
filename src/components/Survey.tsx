@@ -47,13 +47,10 @@ const Survey: FunctionComponent<Props> = ({ questions }) => {
       : initialSelectedOptions;
   });
 
-  const classes = useStyles();
-  const theme = useTheme();
-  const screenIsXs = useMediaQuery(theme.breakpoints.down("xs"));
-
   const everyOptionHasAValue = Object.values(selectedOptions).every(
     (option: any) => option.value !== undefined
   );
+
   useEffect(() => {
     localStorage.setItem("SELECTED-OPTIONS", JSON.stringify(selectedOptions));
 
@@ -72,6 +69,10 @@ const Survey: FunctionComponent<Props> = ({ questions }) => {
       }
     };
   }, [selectedOptions]);
+
+  const classes = useStyles();
+  const theme = useTheme();
+  const screenIsXs = useMediaQuery(theme.breakpoints.down("xs"));
 
   let numberOfWeightedQuestions = questions.length;
 
