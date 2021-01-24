@@ -1,5 +1,4 @@
-# Chess
-A chess app where you can play against a computer (a really bad one) or locally against a friend. 
+# IMS-Eignungstest 
 ### Built With
 * [React](https://reactjs.org/)
 * [React Router](https://reactrouter.com/)
