@@ -5,9 +5,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 
@@ -208,13 +206,13 @@ function Statistics() {
         <Grid container justify="center" className={classes.csvLink}>
           <Link
             href={URL.createObjectURL(
-              new Blob([csvData.map(e => e.join(",")).join("\n")], {
-                type: "text/csv",
+              new Blob([csvData.map(e => e.join(";")).join("\n")], {
+                type: "text/csv;charset=utf-8;",
               })
             )}
             download="statistiken.csv"
           >
-            Statistiken CSV-Datei herunterladen
+            Statistiken als CSV-Datei herunterladen
           </Link>
         </Grid>
       </Grid>
