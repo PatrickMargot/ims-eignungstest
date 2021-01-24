@@ -1,4 +1,5 @@
-# IMS-Eignungstest 
+# IMS-Eignungstest
+An aptitude test made for students attending a lower secondary education to see if the IMS Baden is the right choice for them.
 ### Built With
 * [React](https://reactjs.org/)
 * [React Router](https://reactrouter.com/)
