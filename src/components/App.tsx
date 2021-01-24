@@ -59,11 +59,9 @@ auth.setPersistence(firebase.auth.Auth.Persistence.SESSION);
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // backgroundColor: theme.palette.primary.main,
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    overflowX: "hidden",
   },
   footer: {
     padding: theme.spacing(1),
@@ -71,9 +69,6 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
     display: "flex",
-  },
-  icon: {
-    [theme.breakpoints.down("xs")]: {},
   },
   iconImg: {
     height: "100%",
@@ -105,14 +100,9 @@ const useStyles = makeStyles(theme => ({
     boxShadow: "none",
   },
   homeTitle: {
-    // margin: theme.spacing(6, 0),
     [theme.breakpoints.down("xs")]: {
-      // margin: theme.spacing(2, 0),
       ...theme.typography.h5,
     },
-  },
-  home: {
-    // paddingTop: theme.spacing(4),
   },
   homeContent: {
     flexGrow: 1,
@@ -123,21 +113,19 @@ const useStyles = makeStyles(theme => ({
       ...theme.typography.h6,
     },
   },
-  paper: {
-    marginTop: theme.spacing(8),
+  login: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
-  avatar: {
+  loginAvatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
   },
-  form: {
+  loginForm: {
     width: "100%",
     marginTop: theme.spacing(1),
   },
-  submit: {
+  loginSubmit: {
     margin: theme.spacing(3, 0, 2),
   },
 }));
@@ -244,12 +232,7 @@ function App() {
               </Route>
 
               <Route path="/">
-                <Grid
-                  container
-                  direction="column"
-                  justify="space-between"
-                  className={classes.home}
-                >
+                <Grid container direction="column" justify="space-between">
                   <Grid
                     container
                     direction="column"
@@ -273,8 +256,8 @@ function App() {
                     >
                       Sind Sie interessiert an einer Ausbildung als
                       Informatikmittelschüler/in? Machen Sie einen kurzen Test
-                      und erfahren Sie ob die Informatikmittelschule die
-                      richtige Wahl ist für Sie!
+                      und erfahren Sie, ob die Informatikmittelschule die
+                      richtige Wahl für Sie ist!
                     </Typography>
                     <Grid container spacing={2} justify="center">
                       <Grid item>
@@ -308,7 +291,7 @@ function App() {
                               setLoginOpen(true);
                             }}
                           >
-                            Admin login
+                            Admin Login
                           </Link>
                         )}
                       </Typography>
@@ -322,14 +305,14 @@ function App() {
 
         <Dialog open={loginOpen} onClose={handleLoginClose}>
           <DialogContent>
-            <div className={classes.paper}>
-              <Avatar className={classes.avatar}>
+            <div className={classes.login}>
+              <Avatar className={classes.loginAvatar}>
                 <LockOutlinedIcon />
               </Avatar>
               <Typography component="h1" variant="h5">
                 Admin Login
               </Typography>
-              <form className={classes.form} onSubmit={handleSubmit}>
+              <form className={classes.loginForm} onSubmit={handleSubmit}>
                 <TextField
                   variant="outlined"
                   margin="normal"
@@ -357,7 +340,7 @@ function App() {
                   fullWidth
                   variant="contained"
                   color="primary"
-                  className={classes.submit}
+                  className={classes.loginSubmit}
                 >
                   Einloggen
                 </Button>
